@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
 import axios from 'axios'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 Vue.config.productionTip = false
 

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav"> 
+      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"></router-link>
       <router-link v-bind:to="{ name: 'home' }"></router-link>
-      <router-link class="btn" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+     
     </div>
     <router-view />
     <Footer />
@@ -31,7 +32,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   max-width: 800px;
-  margin: 60px auto 0 auto;
   width: 100%;
   height: 100%;
 }
@@ -51,4 +51,10 @@ export default {
   width: 80%;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 </style>
