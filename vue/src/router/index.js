@@ -5,6 +5,10 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+import Google from '../views/Google.vue'
+import NewMapBoxView from '../views/NewMapBoxView.vue'
+import Rewards from '../views/Rewards.vue'
+import PlacesList from '../components/PlacesList.vue'
 
 Vue.use(Router)
 
@@ -52,7 +56,40 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
+    },
+    {
+      path: "/google",
+      name:"google",
+      component: Google,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/newmapbox",
+      name: "new-mapbox",
+      component: NewMapBoxView,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/rewards",
+      name: "rewards",
+      component: Rewards,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/places",
+      name: "places",
+      component: PlacesList,
+      meta: {
+        requiresAuth: false
+      }
     }
+    
   ]
 })
 

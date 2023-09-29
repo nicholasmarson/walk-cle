@@ -8,8 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "@mapbox/mapbox-gl-directions": "^4.1.1",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
+    "@mapbox/mapbox-sdk": "^0.15.3",
     "@mapbox/search-js-web": "^1.0.0-beta.17",
+    "@turf/turf": "^6.5.0",
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "mapbox-gl": "^2.15.0",

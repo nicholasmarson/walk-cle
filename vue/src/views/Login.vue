@@ -1,6 +1,8 @@
 <template>
   <div id="login">
-     <!-- put logo here -->
+    <div class="logo-container">
+      <img src="../assets/logo/big.png" class="logo"/>
+    </div>
     <form @submit.prevent="login">
       <h1>Login</h1>
       <div id="registered" role="alert" v-if="this.$route.query.registration">
@@ -76,6 +78,7 @@ label {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 #invalid {
@@ -86,5 +89,10 @@ label {
 #registered {
   color: green;
   margin-bottom: 15px;
+}
+
+.logo {
+  width: 40%;
+  height: auto;
 }
 </style>

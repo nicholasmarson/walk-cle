@@ -1,5 +1,8 @@
 <template>
   <div id="register" class="text-center">
+    <div class="logo-container">
+      <img src="../assets/logo/big.png" class="logo"/>
+    </div>
     <form @submit.prevent="register">
       <h1>Create Account</h1>
       <div role="alert" v-if="registrationErrors">
@@ -87,5 +90,11 @@ label {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  width: 40%;
+  height: auto;
 }
 </style>

@@ -6,18 +6,13 @@
      
     </div>
     <router-view />
-    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
-  components: {
-    Footer
-  }
 };
 </script>
 
@@ -31,15 +26,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  max-width: 800px;
-  width: 100%;
-  height: 100%;
+  /* DELETED MAX-WIDTH, WAS MESSING WITH FOOTER */
+  width: 100vw;
+  height: 100vh;
 }
 
 .btn {
   font-family: "Urbanist", sans-serif;
   display: inline-block;
-  background: #2284c5;
+  background: #407F7F;
   color: #fff;
   border: none;
   padding: 10px 20px;
