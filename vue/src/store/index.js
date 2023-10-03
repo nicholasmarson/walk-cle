@@ -21,6 +21,11 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {}
   },
+  data() {
+    return {
+      locations: [], // Initialize an empty array to store location data
+    };
+  },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -37,6 +42,15 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
-    }
+    },
+    async fetchDataFromAPI() {
+      try {
+        const response = await axios.get('your_api_endpoint_here');
+        this.locations = response.data; // Assuming the API response is an array of location objects
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+      }
+    },
+    
   }
 })

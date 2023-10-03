@@ -9,7 +9,8 @@ import Google from '../views/Google.vue'
 import NewMapBoxView from '../views/NewMapBoxView.vue'
 import Rewards from '../views/Rewards.vue'
 import PlacesList from '../components/PlacesList.vue'
-
+import addlayers from '../views/addlayers.vue'
+import AddPointView from '../views/addPointView.vue'
 Vue.use(Router)
 
 /**
@@ -87,6 +88,22 @@ const router = new Router({
       component: PlacesList,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/add",
+      name: "layers",
+      component: addlayers,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/addPoint",
+      name: "AddPoint",
+      component: AddPointView,
+      meta: {
+        requiresAuth: true
       }
     }
     

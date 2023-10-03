@@ -7,14 +7,14 @@
         
         <!-- {{ candidates }} -->
     
-        <div v-if="candidate" class="place-card-id">{{ candidate.place_id }}</div>
+        <!-- <div v-if="candidate" class="place-card-id">{{ candidate.place_id }}</div> -->
 
     </div>
 </template>
 
 <script>
 export default {
-    props: ['candidate']
+    props: ['results']
 }
 </script>
 

@@ -1,6 +1,7 @@
 <template>
     <div class="places-list">
-        <PlaceCard v-for="candidate in candidates" :key="candidate.place_id" :candidate="candidate" />
+        <PlaceCard v-for="result in results" :key="result.place_id" :result="result" />
+        {{ results }}
     </div>
 </template>
 
@@ -14,12 +15,12 @@ export default {
     },
     data() {
         return {
-            candidates: []
+            results: []
         }
     },
     created() {
-        PlacesService.getPlace().then( (response) => {
-            this.candidates = response.data.candidates;
+        PlacesService.getNearbyPlaces().then( (response) => {
+            this.results = response.data;
         })
     }
 }
