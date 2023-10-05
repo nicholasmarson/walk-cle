@@ -33,6 +33,7 @@ export default {
   align-items: center;
   height: 90%;
   width: 100%;
+  background: #407F7F;
 }
 
 #footer-comp {

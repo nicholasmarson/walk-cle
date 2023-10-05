@@ -8,7 +8,7 @@
           </router-link>
         </li>
         <li>
-          <router-link v-bind:to="{name: 'places'}">
+          <router-link v-bind:to="{name: 'locations'}">
             <img src="../assets/Footer-Images/marker.png" id="marker" />
           </router-link>
         </li>
@@ -24,13 +24,11 @@
           <a id="menu-link" @click.prevent="toggleDropdown">
             <img src="../assets/Footer-Images/menu-burger.png" id="menu" />
             <ul v-if="isDropdownOpen" class="dropdown-menu">
-              <a href="#" class="dropdown-option">Profile</a>
-              <a href="#" class="dropdown-option">Settings</a>
-              <router-link :to="{ name: 'google' }" class="dropdown-option">
-                <a href="#" class="dropdown-option">Google</a>
+              <router-link :to="{ name: 'checkin-history' }" class="dropdown-option">
+                <a href="#" class="dropdown-option">Checkin History</a>
               </router-link>
               <router-link :to="{ name: 'AddPoint' }" class="dropdown-option">
-                <a href="#" class="dropdown-option">Add a Point</a>
+                <a href="#" class="dropdown-option">Add a Location</a>
               </router-link>
               <router-link :to="{ name: 'logout' }" class="dropdown-option">
                 <a href="#" class="dropdown-option">Logout</a>
@@ -62,6 +60,10 @@ export default {
 <style scoped>
 img {
   width: 30px;
+  height: auto;
+}
+#logo{
+  width: 70px;
   height: auto;
 }
 
@@ -103,7 +105,7 @@ nav ul li {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   left: 0;
   right: 0;
-  margin-top: -260px;
+  margin-top: -195px;
 }
 
 .dropdown-option {

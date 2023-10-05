@@ -19,7 +19,8 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    checkin: 0,
   },
   data() {
     return {
@@ -51,6 +52,9 @@ export default new Vuex.Store({
         console.error('Error fetching data from API:', error);
       }
     },
+    INCREASE_CHECKIN(state, amt) {
+      state.checkins = state.checkins + amt;
+    }
     
   }
 })
