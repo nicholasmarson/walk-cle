@@ -1,25 +1,25 @@
 package com.techelevator.dao;
 public interface RewardsDao {
 
-    int getAmountOfBarsVisited();
-    int getAmountOfParksVisited();
-    int getAmountOfStadiumsVisited();
-    int getAmountOfTotalPlacesVisited();
-    boolean allBarsVisited();
-    boolean allParksVisited();
-    boolean allStadiumsVisited();
-    boolean allPlacesVisited();
+    int getAmountOfBarsVisited(String username);
 
+    int getAmountOfParksVisited(String username);
 
-    void updateBarCheckIn();
+    int getAmountOfStadiumsVisited(String username);
 
-    void updateParkCheckIn();
+    int getAmountOfTotalPlacesVisited(String username);
 
-    void updateStadiumCheckIn();
+    boolean allBarsVisited(String username);
 
-    void updateAllBarsVisited();
+    boolean allParksVisited(String username);
 
-    void updateAllParksVisited();
+    boolean allStadiumsVisited(String username);
 
-    void updateAllStadiumsVisited();
+    boolean allPlacesVisited(String username);
+
+    void updateBarCheckIn(String username, int locationDataId);
+
+    void updateParkCheckIn(String username, int locationId);
+
+    void updateStadiumCheckIn(String username, int locationId);
 }

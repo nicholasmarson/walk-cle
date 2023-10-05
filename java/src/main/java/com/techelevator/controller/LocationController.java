@@ -33,7 +33,7 @@ public class LocationController {
         }
     }
 
-    @RequestMapping(path="/name/", method=RequestMethod.GET)
+    @RequestMapping(path="/name/{locationName}", method=RequestMethod.GET)
     public Location getLocationByName(@PathVariable String locationName) {
         Location location = locationDao.getLocationByName(locationName);
         if (location == null) {
@@ -49,12 +49,12 @@ public class LocationController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(method=RequestMethod.POST)
+    @RequestMapping(path="/create", method=RequestMethod.POST)
     public Location createLocation(@Valid @RequestBody Location location) {
         return locationDao.createLocation(location);
     }
 
-    @RequestMapping(path="/{locationId}", method=RequestMethod.PUT)
+    @RequestMapping(path="/update/{locationId}", method=RequestMethod.PUT)
     public Location updateLocation(@Valid @RequestBody Location location, @PathVariable int locationId) {
         location.setLocationId(locationId);
         try {
@@ -65,7 +65,7 @@ public class LocationController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @RequestMapping(path="/{locationId}", method=RequestMethod.DELETE)
+    @RequestMapping(path="/delete/{locationId}", method=RequestMethod.DELETE)
     public void deleteLocation(@PathVariable int locationId) {
         locationDao.deleteLocationById(locationId);
     }

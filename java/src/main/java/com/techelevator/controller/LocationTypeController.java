@@ -43,12 +43,12 @@ public class LocationTypeController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(method=RequestMethod.POST)
+    @RequestMapping(path="/create", method=RequestMethod.POST)
     public LocationType createLocationType(@Valid @RequestBody LocationType locationType) {
         return locationTypeDao.createLocationType(locationType);
     }
 
-    @RequestMapping(path="/{locationTypeId}", method=RequestMethod.PUT)
+    @RequestMapping(path="/update/{locationTypeId}", method=RequestMethod.PUT)
     public LocationType updateLocationType(@Valid @RequestBody LocationType locationType, @PathVariable int locationTypeId) {
         locationType.setLocationTypeId(locationTypeId);
         try {
@@ -59,7 +59,7 @@ public class LocationTypeController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @RequestMapping(path="/{locationTypeId}", method=RequestMethod.DELETE)
+    @RequestMapping(path="/delete/{locationTypeId}", method=RequestMethod.DELETE)
     public void deleteLocationType(@PathVariable int locationTypeId) {
         locationTypeDao.deleteLocationTypeById(locationTypeId);
     }

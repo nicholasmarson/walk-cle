@@ -22,7 +22,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public List<LocationType> getLocationTypes() {
         List<LocationType> locationTypes = new ArrayList<>();
-        String sql = "SELECT * FROM locationType";
+        String sql = "SELECT * FROM location_type";
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
@@ -40,7 +40,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public LocationType getLocationTypeById(int locationTypeId) {
         LocationType locationType = null;
-        String sql = "SELECT * FROM locationType WHERE location_type_id = ?";
+        String sql = "SELECT * FROM location_type WHERE location_type_id = ?";
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locationTypeId);
@@ -57,7 +57,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public LocationType getLocationTypeByName(String locationTypeName) {
         LocationType locationType = null;
-        String sql = "SELECT * FROM locationType WHERE location_type_name = ?";
+        String sql = "SELECT * FROM location_type WHERE location_type_name = ?";
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locationTypeName);
@@ -74,7 +74,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public int getLocationTypeIdByName(String locationTypeName) {
         int locationTypeId = -1;
-        String sql = "SELECT location_type_id FROM locationType WHERE location_type_name = ?";
+        String sql = "SELECT location_type_id FROM location_type WHERE location_type_name = ?";
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locationTypeName);
@@ -91,7 +91,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public LocationType createLocationType(LocationType locationType) {
         LocationType newLocationType = null;
-        String sql = "INSERT INTO locationType (location_type_name) VALUES (?) RETURNING location_type_id";
+        String sql = "INSERT INTO location_Type (location_type_name) VALUES (?) RETURNING location_type_id";
 
         try {
             int locationTypeId = jdbcTemplate.queryForObject(sql, int.class, locationType.getLocationTypeName());
@@ -108,7 +108,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public LocationType updateLocationType(LocationType locationType) {
         LocationType updatedLocationType = null;
-        String sql = "UPDATE locationType SET location_type_name = ? WHERE location_type_id = ?";
+        String sql = "UPDATE location_type SET location_type_name = ? WHERE location_type_id = ?";
 
         try {
             int rowsAffected = jdbcTemplate.update(sql, locationType.getLocationTypeName(), locationType.getLocationTypeId());
@@ -128,7 +128,7 @@ public class JdbcLocationTypeDao implements LocationTypeDao {
     @Override
     public int deleteLocationTypeById(int locationTypeId) {
         int numberOfRows = 0;
-        String sql = "DELETE FROM locationType WHERE location_type_id = ?";
+        String sql = "DELETE FROM location_type WHERE location_type_id = ?";
 
         try {
             numberOfRows = jdbcTemplate.update(sql, locationTypeId);
